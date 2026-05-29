@@ -1260,7 +1260,7 @@ input, select, textarea {
 
 		.MonsterBg #bg:before {
 
-		background-image: url("../../images/mmash shoppage newnoscale.png");	
+		/* background-image: url("../../images/mmash shoppage newnoscale.png");	 */
 		}
 
 		#bg:after {
