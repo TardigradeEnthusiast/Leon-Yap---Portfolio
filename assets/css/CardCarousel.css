@@ -28,14 +28,14 @@
     animation: scrolling 10s linear infinite;
   }
 
-    /* @keyframes scrolling {
+    @keyframes scrolling {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(-100%);
     }
-  } */
+  }
 
   .carousel {
     /* ... */
