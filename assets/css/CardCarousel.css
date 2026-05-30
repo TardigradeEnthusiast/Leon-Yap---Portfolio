@@ -1,14 +1,48 @@
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;      
+  gap: 10px;              
+  min-height: 100vh;       
+}
+
 .carousel {
     margin: 0 auto;
     padding: 0% 0;
     /* max-width: 700px; */
     overflow: hidden;
     display: flex;
-    column-gap: 3%;
+    /* column-gap: 1%; */
     justify-content: space-between;
     position:relative;
 }
+
+ .group {
+    display: flex;
+    gap: 0px;
+    /* Add padding to the right to create a gap between the last and first card. */
+    padding-right: 20px;
+     will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
+    animation: scrolling 10s linear infinite;
+  }
+
+    @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .carousel {
+    /* ... */
+    > * {
+      flex: 0 0 100%;
+    }
+  }
 
 .card {
     width: auto;
@@ -39,8 +73,8 @@
 
 }
 .card img {
-height:100%;
-width:100%;
+height:80%;
+width:80%;
 filter: drop-shadow(5px 5px 5px #222);
 
 }

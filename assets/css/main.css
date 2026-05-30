@@ -1243,15 +1243,15 @@ input, select, textarea {
 		}
 
 		#bg:before {
-			-moz-transition: background-color 2.5s ease-in-out;
-			-webkit-transition: background-color 2.5s ease-in-out;
-			-ms-transition: background-color 2.5s ease-in-out;
-			transition: background-color 2.5s ease-in-out;
-			-moz-transition-delay: 0.75s;
-			-webkit-transition-delay: 0.75s;
-			-ms-transition-delay: 0.75s;
-			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
+			-moz-transition: background-color .5s ease-in-out;
+			-webkit-transition: background-color .5s ease-in-out;
+			-ms-transition: background-color .5s ease-in-out;
+			transition: background-color .5s ease-in-out;
+			-moz-transition-delay: 0.1s;
+			-webkit-transition-delay: 0.1s;
+			-ms-transition-delay: 0.1s;
+			transition-delay: 0.1s;
+			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.3), rgba(19, 21, 25, 0.3)), url("../../images/overlay.png");
 			background-size: auto,
  256px 256px;
 			background-position: center,
@@ -1289,7 +1289,7 @@ input, select, textarea {
 
 		.MonsterBg #bg:after {
 
-		background-image: url("../../images/mmash shoppage newnoscale.png");	
+		/* background-image: url("../../images/mmash shoppage newnoscale.png");	 */
 		}
 
 		body.is-article-visible #bg:after {
@@ -1308,7 +1308,7 @@ input, select, textarea {
 		}
 
 		body.is-preload #bg:before {
-			background-color: #000000;
+			/* background-image: url("../../images/bg.jpg");	 */
 			
 		}
 
