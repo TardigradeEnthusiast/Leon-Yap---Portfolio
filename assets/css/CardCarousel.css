@@ -17,22 +17,60 @@
     /* column-gap: 1%; */
     justify-content: space-between;
     position:relative;
+
+
 }
 
- .group {
+.MonsterBg #carousel {
+    will-change: transform;
+    animation: appear 10s linear;
+}
+
+ .group{
     display: flex;
     gap: 0px;
     /* Add padding to the right to create a gap between the last and first card. */
-    padding-right: 20px;
+    padding-right: 10px;
      will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
-    animation: scrolling 10s linear infinite;
+      animation: 
+    appear 1s ease 0s forwards,
+    scrolling 20s linear 1s infinite; 
+ }
+  .groupRight{
+    display: flex;
+    gap: 0px;
+    /* Add padding to the right to create a gap between the last and first card. */
+    padding-right: 10px;
+     will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
+    animation: 
+    appearBot 1s ease 0s forwards,
+    scrollOpposite 20s linear 1s infinite; 
   }
+
+
+  @keyframes appear {
+   from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+@keyframes appearBot {
+   from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
 
     @keyframes scrolling {
     0% {
       transform: translateX(0);
     }
     100% {
+      transform: translateX(-100%);
+    }
+}
+
+    @keyframes scrollOpposite {
+    100% {
+      transform: translateX(0);
+    }
+    0% {
       transform: translateX(-100%);
     }
   }
