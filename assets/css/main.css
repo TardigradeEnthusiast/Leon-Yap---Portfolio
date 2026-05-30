@@ -1128,7 +1128,7 @@ input, select, textarea {
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.8rem;
-		font-weight: 300;
+		font-weight: 1000;
 		height: 2.75rem;
 		letter-spacing: 0.2rem;
 		line-height: 2.75rem;
@@ -1261,6 +1261,7 @@ input, select, textarea {
 		.MonsterBg #bg:before {
 
 		/* background-image: url("../../images/mmash shoppage newnoscale.png");	 */
+		
 		}
 
 		#bg:after {
@@ -1277,6 +1278,10 @@ input, select, textarea {
 			background-size: cover;
 			background-repeat: no-repeat;
 			z-index: 1;
+			-moz-filter: blur(0.2rem);
+			-webkit-filter: blur(0.2rem);
+			-ms-filter: blur(0.2rem);
+			filter: blur(0.2rem); 
 		}
 
 		.MonsterBg #bg:after {
@@ -1289,14 +1294,19 @@ input, select, textarea {
 			-webkit-transform: scale(1.0825);
 			-ms-transform: scale(1.0825);
 			transform: scale(1.0825);
-			-moz-filter: blur(0.2rem);
+			/* -moz-filter: blur(0.2rem);
 			-webkit-filter: blur(0.2rem);
 			-ms-filter: blur(0.2rem);
-			filter: blur(0.2rem);
+			filter: blur(0.2rem); */
+			-moz-filter: blur(0rem);
+			-webkit-filter: blur(0rem);
+			-ms-filter: blur(0rem);
+			filter: blur(0rem);
 		}
 
 		body.is-preload #bg:before {
 			background-color: #000000;
+			
 		}
 
 /* Wrapper */
@@ -1520,6 +1530,7 @@ input, select, textarea {
 			-ms-filter: blur(0.1rem);
 			filter: blur(0.1rem);
 			opacity: 0;
+			
 		}
 
 		body.is-preload #header {
