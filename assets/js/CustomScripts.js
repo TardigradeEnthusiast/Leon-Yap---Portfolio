@@ -25,3 +25,9 @@ function activatePosition(){
    gobo.item(0).classList.add('moved');
 
 }
+
+window.addEventListener('load', function() {
+    if (window.location.hash === '#MonMash') {
+        activatePosition();
+    }
+});

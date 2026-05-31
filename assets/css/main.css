@@ -1680,13 +1680,34 @@ input, select, textarea {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
+			max-height: 90vh;
+			overflow-y: auto;
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 4px;
 			opacity: 0;
-			#main article {
-    		overflow-y: auto;
-}
 		}
+
+			#main article::-webkit-scrollbar {
+				width: 4px;
+			}
+
+			#main article::-webkit-scrollbar-track {
+				background: transparent;
+			}
+
+			#main article::-webkit-scrollbar-thumb {
+				background: rgba(255, 255, 255, 0.25);
+				border-radius: 4px;
+			}
+
+			#main article::-webkit-scrollbar-thumb:hover {
+				background: rgba(255, 255, 255, 0.5);
+			}
+
+			#main article {
+				scrollbar-width: thin;
+				scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+			}
 
 			#main article.active {
 				-moz-transform: translateY(0);
