@@ -32,7 +32,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	/* overflow:hidden; */
+	overflow: hidden;
+
 }
 
 
@@ -1682,6 +1683,9 @@ input, select, textarea {
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 4px;
 			opacity: 0;
+			#main article {
+    		overflow-y: auto;
+}
 		}
 
 			#main article.active {

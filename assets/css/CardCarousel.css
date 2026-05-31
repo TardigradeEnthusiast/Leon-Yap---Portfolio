@@ -9,6 +9,21 @@
   position:static;     
 }
 
+.carousel.moved {
+    animation: appear 1s ease 0s forwards;
+}
+
+.carousel.moved.removing {
+    animation: disappear 1s ease 0s forwards;
+}
+
+.carouselBot.moved {
+    animation: appearBot 1s ease 0s forwards;
+}
+
+.carouselBot.moved.removing {
+    animation: disappearBot 1s ease 0s forwards;
+}
 .carousel {
     margin: 0 auto;
     padding: 0% 0;
@@ -17,7 +32,10 @@
     display: flex;
     /* column-gap: 1%; */
     justify-content: space-between;
-    position:relative;
+     position: fixed;
+    top: 0;
+    width: 100%;
+    transform: translateY(-100vh);
     transform: translateY(-100vh);  /* hidden by default, no animation */
     z-index: 1;
 }
@@ -29,8 +47,11 @@
     display: flex;
     /* column-gap: 1%; */
     justify-content: space-between;
-    position:relative;
-    animation:disappearBot 1s ease-in .5s forwards;
+     position: fixed;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100vh);
+    transform: translateY(100vh);   /* hidden by default, no animation */
     z-index: 1;
 }
 
@@ -42,10 +63,7 @@
      will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
     animation:scrolling 20s linear 1s infinite; 
  }
- .carousel.moved {
- animation: appear 1s ease 0s forwards;
-}
- 
+
   .groupRight{
     display: flex;
     gap: 0px;
@@ -55,9 +73,6 @@
     
     animation: scrollOpposite 20s linear 1s infinite; 
   }
-.carouselBot.moved {
- animation: appearBot 1s ease 0s forwards;
-}
 
 @keyframes appear {
    from { transform: translateY(-100vh); }

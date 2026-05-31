@@ -310,8 +310,10 @@
 			$body.on('click', function(event) {
 
 				// Article visible? Hide.
-					if ($body.hasClass('is-article-visible'))
+					if ($body.hasClass('is-article-visible')){
 						$main._hide(true);
+					    BgRemove();
+					}
 
 			});
 
@@ -322,10 +324,10 @@
 					case 27:
 
 						// Article visible? Hide.
-							if ($body.hasClass('is-article-visible'))
-								$main._hide(true);
-
-						break;
+						if ($body.hasClass('is-article-visible')) {
+       					 $main._hide(true);
+        				BgRemove(); 
+    }
 
 					default:
 						break;
