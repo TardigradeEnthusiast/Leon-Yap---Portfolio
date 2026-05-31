@@ -58,20 +58,20 @@
 }
 
 @keyframes appear {
-   from { transform: translateY(-225%); }
+   from { transform: translateY(-300%); }
   to { transform: translateY(0); }
 }
 @keyframes appearBot {
-   from { transform: translateY(225%); }
+   from { transform: translateY(300%); }
   to { transform: translateY(0); }
 }
 @keyframes disappear {
    from { transform: translateY(0); }
-  to { transform: translateY(-225%); }
+  to { transform: translateY(-300%); }
 }
 @keyframes disappearBot {
    from { transform: translateY(0); }
-  to { transform: translateY(225%); }
+  to { transform: translateY(300%); }
 }
 
     @keyframes scrolling {
@@ -79,7 +79,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-300%);
     }
 }
 
