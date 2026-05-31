@@ -6,7 +6,9 @@
   align-items: center;      
   gap: 10px;              
   min-height: 100vh;  
-  position:static;     
+  position:static;    
+  overflow: hidden;
+   
 }
 
 .carousel.moved {
@@ -28,7 +30,7 @@
     margin: 0 auto;
     padding: 0% 0;
     /* max-width: 700px; */
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     /* column-gap: 1%; */
     justify-content: space-between;
@@ -43,7 +45,7 @@
  margin: 0 auto;
     padding: 0% 0;
     /* max-width: 700px; */
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     /* column-gap: 1%; */
     justify-content: space-between;
