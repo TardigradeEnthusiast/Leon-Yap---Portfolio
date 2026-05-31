@@ -17,8 +17,8 @@
     /* column-gap: 1%; */
     justify-content: space-between;
     position:relative;
-    animation:disappear 1s ease 0s forwards;
-
+    animation:disappear 1s ease-in .5s forwards;
+    z-index: 1;
 }
 .carouselBot {
  margin: 0 auto;
@@ -29,7 +29,8 @@
     /* column-gap: 1%; */
     justify-content: space-between;
     position:relative;
-    animation:disappearBot 1s ease 0s forwards;
+    animation:disappearBot 1s ease-in .5s forwards;
+    z-index: 1;
 }
 
  .group{

@@ -1308,7 +1308,7 @@ input, select, textarea {
 		}
 
 		body.is-preload #bg:before {
-			/* background-image: url("../../images/bg.jpg");	 */
+			background-image: url("../../images/bg.jpg");	
 			
 		}
 
