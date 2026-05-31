@@ -34,10 +34,10 @@
     justify-content: space-between;
      position: fixed;
     top: 0;
-    width: 100%;
+    width: 115%;
     transform: translateY(-100vh);
-    transform: translateY(-100vh);  /* hidden by default, no animation */
-    z-index: 1;
+   
+    z-index: 2;
 }
 .carouselBot {
  margin: 0 auto;
@@ -49,9 +49,9 @@
     justify-content: space-between;
      position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 115%;
     transform: translateY(100vh);
-    transform: translateY(100vh);   /* hidden by default, no animation */
+
     z-index: 1;
 }
 
@@ -59,7 +59,7 @@
     display: flex;
     gap: 0px;
     /* Add padding to the right to create a gap between the last and first card. */
-    padding-right: 10px;
+    padding-right: 0px;
      will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
     animation:scrolling 20s linear 1s infinite; 
  }
@@ -68,7 +68,7 @@
     display: flex;
     gap: 0px;
     /* Add padding to the right to create a gap between the last and first card. */
-    padding-right: 10px;
+    padding-right: 0px;
      will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
     
     animation: scrollOpposite 20s linear 1s infinite; 
@@ -124,7 +124,9 @@
   }
 
 .card {
-    width: auto;
+    width: 16.67%;        /* set whatever width you want */
+    flex-shrink: 0;      /* prevent it from shrinking */
+    /* width: auto; */
     height:fit-content;
     color: white;
     border-radius: 24px;
@@ -137,18 +139,6 @@
     
 
 
-    &:nth-child(1) {
-        /* background: #7958ff; */
-          
-    }
-
-    &:nth-child(2) {
-        /* background: #5d34f2; */
-    }
-
-    &:nth-child(3) {
-        /* background: #4300da; */
-    }
 
 }
 .card img {
@@ -157,3 +147,4 @@ width:80%;
 filter: drop-shadow(5px 5px 5px #222);
 
 }
+
