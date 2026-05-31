@@ -1425,12 +1425,21 @@ input, select, textarea {
 			}
 
 		#header .logo {
-			width: 5.5rem;
-			height: 5.5rem;
-			line-height: 5.5rem;
-			border: solid 1px #ffffff;
-			border-radius: 100%;
+			 width: 5.5rem;
+            height: 5.5rem;
+            line-height: 5.5rem;
+            border: solid 1px #ffffff;
+            border-radius: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: #0e1428; */
 		}
+		  #header .logo img {
+                width: 80%;
+                height: 80%;
+            }
 
 			#header .logo .icon:before {
 				font-size: 2rem;
@@ -1745,7 +1754,7 @@ input, select, textarea {
 					height: 2.5rem;
 					border-radius: 100%;
 					background-position: center;
-					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
+					background-image: url("images\metrorock logo for proj-black.svg");
 					background-size: 20px 20px;
 					background-repeat: no-repeat;
 				}
