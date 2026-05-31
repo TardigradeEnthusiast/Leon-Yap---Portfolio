@@ -17,13 +17,19 @@
     /* column-gap: 1%; */
     justify-content: space-between;
     position:relative;
-
+    animation:disappear 1s ease 0s forwards;
 
 }
-
-.MonsterBg #carousel {
-    will-change: transform;
-    animation: appear 10s linear;
+.carouselBot {
+ margin: 0 auto;
+    padding: 0% 0;
+    /* max-width: 700px; */
+    overflow: hidden;
+    display: flex;
+    /* column-gap: 1%; */
+    justify-content: space-between;
+    position:relative;
+    animation:disappearBot 1s ease 0s forwards;
 }
 
  .group{
@@ -32,29 +38,40 @@
     /* Add padding to the right to create a gap between the last and first card. */
     padding-right: 10px;
      will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
-      animation: 
-    appear 1s ease 0s forwards,
-    scrolling 20s linear 1s infinite; 
+    animation:scrolling 20s linear 1s infinite; 
  }
+ .carousel.moved {
+ animation: appear 1s ease 0s forwards;
+}
+ 
   .groupRight{
     display: flex;
     gap: 0px;
     /* Add padding to the right to create a gap between the last and first card. */
     padding-right: 10px;
      will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
-    animation: 
-    appearBot 1s ease 0s forwards,
-    scrollOpposite 20s linear 1s infinite; 
+    
+    animation: scrollOpposite 20s linear 1s infinite; 
   }
+.carouselBot.moved {
+ animation: appearBot 1s ease 0s forwards;
+}
 
-
-  @keyframes appear {
-   from { transform: translateY(-100%); }
+@keyframes appear {
+   from { transform: translateY(-200%); }
   to { transform: translateY(0); }
 }
 @keyframes appearBot {
-   from { transform: translateY(100%); }
+   from { transform: translateY(200%); }
   to { transform: translateY(0); }
+}
+@keyframes disappear {
+   from { transform: translateY(0); }
+  to { transform: translateY(-200%); }
+}
+@keyframes disappearBot {
+   from { transform: translateY(0); }
+  to { transform: translateY(200%); }
 }
 
     @keyframes scrolling {
@@ -76,6 +93,13 @@
   }
 
   .carousel {
+    /* ... */
+    > * {
+      flex: 0 0 100%;
+    }
+  }
+
+   .carouselBot {
     /* ... */
     > * {
       flex: 0 0 100%;
