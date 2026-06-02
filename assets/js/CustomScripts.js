@@ -43,33 +43,49 @@ window.addEventListener('load', function() {
     if (window.location.hash === '#MonMash') {
         activatePosition();
     }
+
+    // Initialise all slideshows
+    showSlide(1, 1);
+    showSlide(1, 2);
 });
 
-let slideIndex = 1;
-showSlides(slideIndex);
+// Separate slide index for each slideshow
+// Index 0 is unused; [1] = slideshow 1, [2] = slideshow 2
+var slideIndexes = [1, 1, 1];
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+// Called by prev/next buttons: n = +1 or -1, slideshowNum = 1 or 2
+function plusSlides(n, slideshowNum) {
+    showSlide(slideIndexes[slideshowNum] += n, slideshowNum);
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+// Jump directly to a slide (used by dot indicators if present)
+function currentSlide(n, slideshowNum) {
+    showSlide(slideIndexes[slideshowNum] = n, slideshowNum);
 }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+function showSlide(n, slideshowNum) {
+    var slides = document.getElementsByClassName("mySlides" + slideshowNum);
+    var dots   = document.getElementsByClassName("dot" + slideshowNum);
+
+    if (slides.length === 0) return;
+
+    // Wrap around
+    if (n > slides.length) { slideIndexes[slideshowNum] = 1; }
+    if (n < 1)             { slideIndexes[slideshowNum] = slides.length; }
+
+    // Hide all slides in this slideshow
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    // Deactivate all dots for this slideshow (if any)
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    // Show the current slide and activate its dot
+    slides[slideIndexes[slideshowNum] - 1].style.display = "block";
+    if (dots.length > 0) {
+        dots[slideIndexes[slideshowNum] - 1].className += " active";
+    }
 }

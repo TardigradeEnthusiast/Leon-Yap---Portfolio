@@ -1,0 +1,28 @@
+@keyframes rollPop {
+    0% {
+        transform: rotate(-0.03turn) scale(0.92);
+    }
+    50% {
+        transform: rotate(0.03turn) scale(1);
+    }
+    100% {
+        transform: rotate(-0.03turn) scale(0.92);
+    }
+}
+
+.BurgerTitle {
+    display: flex;
+    gap: 0px;
+    padding-right: 0px;
+    max-width: 100%;
+    transform-origin: center center;
+    will-change: transform;
+    animation: rollPop 2s ease-in-out 1s infinite;
+}
+
+/* If the title contains an img, keep it from overflowing */
+.BurgerTitle img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
