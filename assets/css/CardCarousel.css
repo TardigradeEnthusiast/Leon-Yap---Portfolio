@@ -33,10 +33,10 @@
     position: fixed;
     bottom: 50%;              /* anchored just above centre */
     top: auto;
-    margin-bottom: .5vh;       /* half the gap — vh keeps it proportional to screen size */
+    margin-bottom: 1vh;       /* half the gap — vh keeps it proportional to screen size */
 
     width: 115%;
-    height: 47vh;             /* less than 50vh = breathing room at top/bottom edges */
+    height: 44vh;             /* less than 50vh = breathing room at top/bottom edges */
 
     display: flex;
     justify-content: space-between;
@@ -50,10 +50,10 @@
     position: fixed;
     top: 50%;                 /* anchored just below centre */
     bottom: auto;
-    margin-top: .5vh;          /* keep equal to margin-bottom above */
+    margin-top: 1vh;          /* keep equal to margin-bottom above */
 
     width: 115%;
-    height: 47vh;
+    height: 44vh;
 
     display: flex;
     justify-content: space-between;
@@ -97,7 +97,7 @@
 .card img {
     height: 100%;
     width: auto;              /* aspect-ratio preserved */
-    filter: drop-shadow(3px 3px 3px #222);
+    filter: drop-shadow(0.3vh 0.3vh 0.3vh #222);
 }
 
 /* ── Keyframes ───────────────────────────────────────────────────────── */
