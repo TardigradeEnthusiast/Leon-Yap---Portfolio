@@ -1,15 +1,15 @@
-
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  align-items: center;      
-  gap: 10px;              
-  min-height: 100vh;  
-  position:static;    
-  overflow: hidden;
-   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 100vh;
+    position: static;
+    overflow: hidden;
 }
+
+/* ── Entry / exit animations ─────────────────────────────────────────── */
 
 .carousel.moved {
     animation: appear 1s ease 0s forwards;
@@ -26,127 +26,108 @@
 .carouselBot.moved.removing {
     animation: disappearBot 1s ease 0s forwards;
 }
+
+/* ── Carousel tracks ─────────────────────────────────────────────────── */
+
 .carousel {
-    margin: 0 auto;
-    padding: 0% 0;
-    /* max-width: 700px; */
-    overflow: visible;
-    display: flex;
-    /* column-gap: 1%; */
-    justify-content: space-between;
-     position: fixed;
-    top: 0;
+    position: fixed;
+    bottom: 50%;              /* anchored just above centre */
+    top: auto;
+    margin-bottom: 2vh;       /* half the gap — vh keeps it proportional to screen size */
+
     width: 115%;
-    transform: translateY(-100vh);
-   
+    height: 50vh;             /* fills exactly half the screen */
+
+    display: flex;
+    justify-content: space-between;
+    overflow: visible;
+
+    transform: translateY(-100vh); /* off-screen until .moved is added */
     z-index: 2;
 }
-.carouselBot {
- margin: 0 auto;
-    padding: 0% 0;
-    /* max-width: 700px; */
-    overflow: visible;
-    display: flex;
-    /* column-gap: 1%; */
-    justify-content: space-between;
-     position: fixed;
-    bottom: 0;
-    width: 115%;
-    transform: translateY(100vh);
 
+.carouselBot {
+    position: fixed;
+    top: 50%;                 /* anchored just below centre */
+    bottom: auto;
+    margin-top: 2vh;          /* keep equal to margin-bottom above */
+
+    width: 115%;
+    height: 50vh;
+
+    display: flex;
+    justify-content: space-between;
+    overflow: visible;
+
+    transform: translateY(100vh);
     z-index: 1;
 }
 
- .group{
+/* ── Scrolling groups ────────────────────────────────────────────────── */
+
+.group {
     display: flex;
-    gap: 0px;
-    /* Add padding to the right to create a gap between the last and first card. */
-    padding-right: 0px;
-     will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
-    animation:scrolling 20s linear 1s infinite; 
- }
+    gap: 1vw;                 /* gap between cards — vw scales with screen width */
+    padding-right: 1vw;       /* match gap so the loop seam stays consistent */
+    height: 100%;             /* fill the carousel track height */
+    will-change: transform;
+    animation: scrolling 20s linear 1s infinite;
+}
 
-  .groupRight{
+.groupRight {
     display: flex;
-    gap: 0px;
-    /* Add padding to the right to create a gap between the last and first card. */
-    padding-right: 0px;
-     will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
-    
-    animation: scrollOpposite 20s linear 1s infinite; 
-  }
-
-@keyframes appear {
-   from { transform: translateY(-100vh); }
-  to { transform: translateY(0); }
-}
-@keyframes appearBot {
-   from { transform: translateY(100vh); }
-  to { transform: translateY(0); }
-}
-@keyframes disappear {
-   from { transform: translateY(0); }
-  to { transform: translateY(-100vh); }
-}
-@keyframes disappearBot {
-   from { transform: translateY(0); }
-  to { transform: translateY(100vh); }
+    gap: 1vw;
+    padding-right: 1vw;
+    height: 100%;
+    will-change: transform;
+    animation: scrollOpposite 20s linear 1s infinite;
 }
 
-    @keyframes scrolling {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-}
-
-    @keyframes scrollOpposite {
-    100% {
-      transform: translateX(0);
-    }
-    0% {
-      transform: translateX(-100%);
-    }
-  }
-
-  .carousel {
-    /* ... */
-    > * {
-      flex: 0 0 100%;
-    }
-  }
-
-   .carouselBot {
-    /* ... */
-    > * {
-      flex: 0 0 100%;
-    }
-  }
+/* ── Cards ───────────────────────────────────────────────────────────── */
 
 .card {
-    width: 16.67%;        /* set whatever width you want */
-    flex-shrink: 0;      /* prevent it from shrinking */
-    /* width: auto; */
-    height:fit-content;
-    color: white;
-    border-radius: 24px;
-    /* box-shadow: rgba(0, 0, 0, 10%) 5px 5px 20px 0; */
-    padding: 0x;
-    font-size: xx-large;
-    justify-content: center;
+    height: 100%;             /* fill the group / track height */
+    width: auto;
+    flex-shrink: 0;
+    display: flex;
     align-items: center;
-    /* min-height: 200px; */
-    
-
-
-
+    justify-content: center;
 }
+
 .card img {
-height:80%;
-width:80%;
-filter: drop-shadow(3px 3px 3px #222);
-
+    height: 100%;
+    width: auto;              /* aspect-ratio preserved */
+    filter: drop-shadow(3px 3px 3px #222);
 }
 
+/* ── Keyframes ───────────────────────────────────────────────────────── */
+
+@keyframes appear {
+    from { transform: translateY(-100vh); }
+    to   { transform: translateY(0); }
+}
+
+@keyframes appearBot {
+    from { transform: translateY(100vh); }
+    to   { transform: translateY(0); }
+}
+
+@keyframes disappear {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-100vh); }
+}
+
+@keyframes disappearBot {
+    from { transform: translateY(0); }
+    to   { transform: translateY(100vh); }
+}
+
+@keyframes scrolling {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes scrollOpposite {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
