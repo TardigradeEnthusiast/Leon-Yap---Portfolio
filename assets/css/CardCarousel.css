@@ -71,7 +71,7 @@
     padding-right: 1vw;       /* match gap so the loop seam stays consistent */
     height: 100%;             /* fill the carousel track height */
     will-change: transform;
-    animation: scrolling 20s linear 1s infinite;
+    animation: scrolling 40s linear 1s infinite;
 }
 
 .groupRight {
@@ -80,7 +80,7 @@
     padding-right: 1vw;
     height: 100%;
     will-change: transform;
-    animation: scrollOpposite 20s linear 1s infinite;
+    animation: scrollOpposite 40s linear 1s infinite;
 }
 
 /* ── Cards ───────────────────────────────────────────────────────────── */
