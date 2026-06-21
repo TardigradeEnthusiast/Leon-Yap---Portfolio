@@ -1314,7 +1314,10 @@ input, select, textarea {
 			background-image: url("../../images/bg.jpg");	
 			
 		}
-
+#bg {
+    image-rendering: -webkit-optimize-contrast; /* Safari */
+    image-rendering: crisp-edges;               /* Firefox / others */
+}
 /* Wrapper */
 
 	#wrapper {
@@ -1437,11 +1440,12 @@ input, select, textarea {
             justify-content: center;
             /* background-color: #0e1428; */
 		}
-		  #header .logo img {
-                width: 110%;
-                height: 110%;
-            }
-
+		 /* Logo — centred and properly contained within the circle */
+#header .logo img {
+    width: 106%;
+    height: 106%;
+    object-fit: cover;
+}
 			#header .logo .icon:before {
 				font-size: 2rem;
 			}
